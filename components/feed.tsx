@@ -8,7 +8,7 @@ export function Feed({videos}:{videos:any}) {
         <div className='w-full flex flex-wrap gap-6 p-5 justify-around md:ml-56'>
             {videos && videos.map((item:any,index:any) => (
 
-            <div className='w-[288px] h-[300px]'>
+            <div className='w-[288px] h-[300px]' key={"2"}>
                 <Link href={item.ln}>
                     <div className='flex flex-col'>
                             <div className=''>
