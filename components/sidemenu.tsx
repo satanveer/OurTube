@@ -26,9 +26,9 @@ export default function sidemenu() {
     ];
   return (
     <div className="scrollableSidebar fixed w-52 hidden md:block xl:block">
-        {menuItems.map((item, index) => {
-            return (
-                <div className="p-2 pl-3 w-60">
+        {menuItems.map((item, index) => (
+            
+                <div className="p-2 pl-3 w-60" key={"1"}>
                     <nav className="text-gray-400">
                         <ul className="flex flex-col pt-7">
                             <li className="hover:bg-gray-500">
@@ -53,8 +53,8 @@ export default function sidemenu() {
                         </ul>
                     </nav>
                 </div>
-            );
-        })}
+        ))};
+        
     </div>
   );
 }
