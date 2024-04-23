@@ -9,24 +9,33 @@ export function Feed({videos}:{videos:any}) {
             {videos && videos.map((item:any,index:any) => (
 
             <div className='w-[288px] h-[300px]' key={"2"}>
-                <Link href={item.ln}>
                     <div className='flex flex-col'>
+                        <Link href={item.ln}>
                             <div className=''>
                                 <img src={item.thumbnail} alt='thumbnail' width={288} height={192}className='rounded-xl'></img>
                             </div>
+                         </Link>
                             <div className='flex gap-2 pt-4 '>
+                            <Link href={item.ln}>
                                 <div>
                                     <img src={item.creator} alt='creator' width={40} height={40} className='rounded-[1000px]'></img>
                                 </div>
+                            </Link>
 
                                 <div>
-                                    <span className='bg-transparent flex text-gray-300 text-sm'>{item.title}</span>
-                                    <span className='text-gray-300 text-sm'>{item.views}</span>
+                                    <Link href={item.ln}>
+                                        <span className='bg-transparent flex text-gray-300 text-sm'>{item.title}</span>
+                                    </Link>
+                                    
+
+                                        <span className='text-gray-300 text-sm'>{item.views}</span>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                     </div>
                     
-            </Link>
             </div>
         ))}
       </div>
