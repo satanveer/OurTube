@@ -21,32 +21,35 @@ export default function sidemenu() {
         {'name':'Spotlight','icon':'/images/spotlight.png','ln':'#'},
         {'name':'360','icon':'/images/360.png','ln':'#'},
         {'name':'Browse Channels','icon':'/images/browse.png','ln':'#'},
-        {'name':'More From Youtube','icon':'/images/more.png','ln':'#'},
+        {'name':'More','icon':'/images/more.png','ln':'#'},
         
     ];
   return (
     <div className="scrollableSidebar fixed w-52 hidden md:block xl:block">
         {menuItems.map((item, index) => (
             
-                <div className="p-2 pl-3 w-60" key={"1"}>
+                <div className="pl-3 w-52" key={"1"}>
                     <nav className="text-gray-400">
-                        <ul className="flex flex-col pt-7">
-                            <li className="hover:bg-gray-500">
-                                <div className="">
-                                    <Link href={item.ln} className="flex gap-2 items-center">
-                                        <div>
+                        <ul className="flex flex-col pt-7 mr-2">
+                            <li className="">
+                                
+                                    <Link href={item.ln} className="flex gap-2items-center hover:bg-gray-600 hover:rounded-3xl px-2 py-3 ">
+                                        
                                             <Image
                                                 src={item.icon}
                                                 alt=""
                                                 width={25}
                                                 height={25}
+                                                className="bg-transparent"
                                             ></Image>
-                                        </div>
-                                        <div>
+                                        
+                                        
+                                           <span className="bg-transparent">
                                             {item.name}
-                                        </div>
+                                           </span> 
+                                        
                                     </Link>
-                                </div>
+                                
                                 <div>
                                 </div>
                             </li>

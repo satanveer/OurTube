@@ -5,7 +5,7 @@ import Link from 'next/link'
 export function Feed({videos}:{videos:any}) {
     
     return (
-        <div className='w-full flex flex-wrap gap-6 p-5 justify-around md:ml-56'>
+        <div className='w-full flex flex-wrap gap-6 p-2 justify-around md:ml-56'>
             {videos && videos.map((item:any,index:any) => (
 
             <div className='w-[288px] h-[300px]' key={"2"}>

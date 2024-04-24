@@ -1,25 +1,28 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-
-.scrollableSidebar{
-  
+.scrollableSidebar {
   overflow-x: hidden;
-  
   height: 100vh;
-  
-  
-
 }
-  
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #1b1b1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #616162;
+}
 
-
-
-*{
+#sidebar-items:hover {
+  background-color: gray;
+}
+* {
   padding: 0;
   margin: 0;
-  background-color: #1b1b1c;
+  background: #1b1b1c;
 }
