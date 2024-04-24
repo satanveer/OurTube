@@ -33,7 +33,7 @@ export default function sidemenu() {
                         <ul className="flex flex-col pt-7 mr-2">
                             <li className="">
                                 
-                                    <Link href={item.ln} className="flex gap-2items-center hover:bg-gray-600 hover:rounded-3xl px-2 py-3 ">
+                                    <Link href={item.ln} className="flex gap-2 items-center hover:bg-gray-600 hover:rounded-3xl px-2 py-3 ">
                                         
                                             <Image
                                                 src={item.icon}
