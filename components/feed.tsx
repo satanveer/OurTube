@@ -15,7 +15,7 @@ export function Feed({videos}:{videos:any}) {
                                 <img src={item.thumbnail} alt='thumbnail' className='rounded-xl contain w-full'></img>
                             </div>
                          </Link>
-                            <div className='flex gap-2 pt-4 items-center justify-center'>
+                            <div className='flex gap-2 pt-4 items-start w-full'>
                             <Link href={item.ln}>
                                 <div>
                                     <img src={item.creator} alt='creator' width={40} height={40} className='rounded-[1000px]'></img>
