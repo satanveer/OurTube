@@ -30,10 +30,10 @@ export default function sidemenu() {
             
                 <div className="pl-3 w-52" key={"1"}>
                     <nav className="text-gray-400">
-                        <ul className="flex flex-col pt-7 mr-2">
+                        <ul className="flex flex-col pt-7 mr-4">
                             <li className="">
                                 
-                                    <Link href={item.ln} className="flex gap-2 items-center hover:bg-gray-600 hover:rounded-3xl px-2 py-3 ">
+                                    <Link href={item.ln} className="flex items-center hover:bg-gray-600 hover:rounded-2xl px-2 py-2 gap-2 hover:transition ease-in-out delay-10">
                                         
                                             <Image
                                                 src={item.icon}
@@ -44,7 +44,7 @@ export default function sidemenu() {
                                             ></Image>
                                         
                                         
-                                           <span className="bg-transparent">
+                                           <span className="bg-transparent text-base">
                                             {item.name}
                                            </span> 
                                         
