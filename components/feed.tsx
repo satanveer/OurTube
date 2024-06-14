@@ -5,8 +5,8 @@ import Link from 'next/link'
 export function Feed({videos}:{videos:any}) {
     
     return (
-        <div className='w-full flex flex-wrap gap-6 p-2 justify-around md:ml-56'>
-            {videos && videos.map((item:any,index:any) => (
+        <div className='w-full flex flex-wrap gap-6 p-2 justify-around md:pl-56'>
+            {videos.map((item:any,index:any) => (
 
             <div className='w-full  md:w-[288px] md:h-[300px]' key={"2"}>
                     <div className='flex flex-col items-center'>

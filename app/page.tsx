@@ -1,6 +1,7 @@
 import React from "react";
 import {Feed} from "@/components/feed";
 import Sidemenu from "@/components/sidemenu";
+import Recommendation from "@/components/Recommendation";
 
 
 
@@ -37,10 +38,18 @@ const videos = [
 export default function home(){
 
   return (
-    <main className="flex pt-16">
+   <div className="flex">
+      <div className=" pt-20">
       <Sidemenu></Sidemenu>
-      <Feed videos={videos}></Feed>
+      </div>
+
+        <div className="pt-20">
+          
+          <Recommendation/>
+          <Feed videos={videos}></Feed>
+        </div>
       
-    </main>
+    </div>
+   
   )
 }
