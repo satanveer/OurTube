@@ -24,7 +24,7 @@ export default function Recommendation() {
         <div className='flex gap-5 md:w-[288px] md:pl-64 pb-3'>
             {recommendation &&
                 recommendation.map((item: any, index: any) => (
-                    <ul className='flex'>
+                    <ul className='flex' key={1}>
                         <Link href={item.ln} className=''>
                         <li className=''>
                             <span className='text-white bg-gray-500 p-[6px] bg-opacity-50 rounded-xl hover:bg-opacity-80 hover:transition-all delay-50'>{item.suggestion}</span>

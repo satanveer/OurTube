@@ -1,4 +1,3 @@
-// utils/youtubeApi.js
 import axios from 'axios';
 
 const API_KEY = 'AIzaSyD5Flw817VJ9zbPVCQ2TwwSoGtMcoymazs'; 
