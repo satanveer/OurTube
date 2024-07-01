@@ -16,6 +16,7 @@ export default function Recommendation() {
             { suggestion: 'food', ln: '#' },
             { suggestion: 'movies', ln: '#' },
             { suggestion: 'technology', ln: '#' },
+            { suggestion: 'science', ln: '#' },
             { suggestion: 'more', ln: '#' },
         ];
         
