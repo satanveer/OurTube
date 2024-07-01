@@ -1,10 +1,23 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Ourtube from "@/public/images/video.png"
+import { useState } from "react";
 
 
 export default function Navbar(){
+        var search;
+        const [searchInput, setSearchInput] = useState('');
+      
+        const handleInputChange = (event:any) => {
+          setSearchInput(event.target.value);
+        };
+      
+        const handleSubmit = (event:any) => {
+          event.preventDefault();
+            search = searchInput;
+            setSearchInput('');
+        };
     return (
         <main>
            <nav className="flex fixed w-full h-16">
@@ -15,8 +28,8 @@ export default function Navbar(){
                     <span className="text-2xl pt-3 hidden md:block">OurTube</span></Link>
                 </li>
                 <li className="">
-                    <form action="" className="flex gap-4 md:mr-32">
-                        <input type="text" placeholder="Search..." className="md:block hidden border-[1.5px] border-gray-500 p-1 px-3 rounded-2xl w-[460px] text-white focus:outline-none"></input>
+                    <form onSubmit={handleSubmit} action="" className="flex gap-4 md:mr-32">
+                        <input type="text" value={searchInput} onChange={handleInputChange} placeholder="Search..." className="md:block hidden border-[1.5px] border-gray-500 p-1 px-3 rounded-2xl w-[460px] text-white focus:outline-none"></input>
                         <button className=""><Image src={'/images/search.png'} alt="Search" height={32} width={32} className="flex justify-end"></Image></button>
                     </form>
                 </li>
