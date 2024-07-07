@@ -7,7 +7,7 @@ export default function valueConverters(num:any) {
     } else if (Math.abs(num) >= 1.0e+3) {
       return  Math.floor(num/1.0e+3) + "K";
     } else {
-      return num.toString();
+      return num;
     }
   };
 
