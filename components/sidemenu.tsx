@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Vids from "./Vids";
 
-export default function SideMenu() {
+import Feed from "./feed";
+
+export default function SideMenu(setSearchside:any) {
     const menuItems = [
         {'name': 'Home', 'icon': '/images/home.png', 'ln': '#'},
         {'name': 'Sports', 'icon': '/images/gaming.png', 'ln': '#'},
@@ -22,7 +23,7 @@ export default function SideMenu() {
         {'name': 'Travel', 'icon': '/images/travel.png', 'ln': '#'},
         {'name': 'Food', 'icon': '/images/clock.png', 'ln': '#'},
         {'name': 'Comedy', 'icon': '/images/funny.png', 'ln': '#'},
-        {'name': 'Podcasts', 'icon': '/images/subscribe.png', 'ln': '#'},
+        {'name': 'Podcasts', 'icon': '/images/podcast.png', 'ln': '#'},
         {'name': 'Subscriptions', 'icon': '/images/subscribe.png', 'ln': '#'},
         {'name': 'History', 'icon': '/images/history.png', 'ln': '#'},
         {'name': 'Liked Videos', 'icon': '/images/social.png', 'ln': '#'},
@@ -38,11 +39,10 @@ export default function SideMenu() {
     const [selectedText, setSelectedText] = useState("");
 
     const handleClick = (name: string) => {
-        console.log("Selected menu item:", name); // Debug log
         setSelectedText(name);
-        
+        console.log(selectedText)
+        setSearchside(selectedText);
     };
-    
 
     return (
         <div className="w-full">
@@ -72,7 +72,8 @@ export default function SideMenu() {
             ))}
             
         </div>
-        <Vids text={selectedText} />
+        
+        
         </div>
         
     );

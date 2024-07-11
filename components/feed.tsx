@@ -1,25 +1,55 @@
 "use client";
-import React, { useState } from 'react';
 import Link from 'next/link';
 import moment from 'moment';
 import valueConverters from '@/components/valueConverter';
 import shortenTitle from '@/components/titleConverter';
 import Recommendation from './Recommendation';
+import { useState, useEffect } from 'react';
+import { fetchVideos } from './youtubeApi';
 
-export default function Feed({ videos }: any) {
+interface Video {
+  id: string;
+  thumbnail: string;
+  title: string;
+  channelName: string;
+  views: number;
+  publishedAt: string;
+}
 
-  // Provide a default value for videos to avoid errors
-  const videoList = videos || [];
-  
+export default function Feed({ search, side }: { search: string; side: string }) {
+  console.log(search)
+  const [vid, setVid] = useState<Video[]>([]);
+  const [sideVid, setSideVid] = useState<Video[]>([]);
+
+  useEffect(() => {
+    const loadVideos = async () => {
+      
+      const videoDataFromSearch = await fetchVideos(search);
+      setVid(videoDataFromSearch);
+    };
+    loadVideos();
+  }, [search]);
+  useEffect(() => {
+    const loadSideVideos = async () => {
+      const videoDataFromSearchSide = await fetchVideos(side);
+      setSideVid(videoDataFromSearchSide);
+    };
+    loadSideVideos();
+  }, [side]);
+  useEffect(()=>{
+
+  },[vid])
+
+  const videoList = [...vid, ...sideVid];
+
   return (
-    
-    <div className='w-full flex flex-wrap gap-[20px] pl-52'>
-      {videoList.map((video:any) => (
+    <div className='flex flex-wrap justify-around md:pl-52'>
+      {videoList.map((video) => (
         <div className='w-full md:w-[288px] md:h-[300px] mt-10' key={video.id}>
           <div className='flex flex-col items-center h-full'>
             <Link href={`https://youtube.com/watch?v=${video.id}`} className='w-full'>
               <div className='w-full'>
-                <img 
+                <img
                   src={video.thumbnail}
                   alt='thumbnail'
                   className='rounded-xl contain w-full h-[220px] object-cover'
@@ -29,7 +59,7 @@ export default function Feed({ videos }: any) {
             <div className='flex gap-2 pt-4 items-start w-full h-full'>
               <div>
                 <img
-                  src={video.thumbnail} 
+                  src={video.thumbnail}
                   alt='creator'
                   width={40}
                   height={50}
