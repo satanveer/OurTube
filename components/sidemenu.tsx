@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import Feed from "./feed";
 
-export default function SideMenu(setSearchside:any) {
+export default function SideMenu({ setSearchside }: { setSearchside: (value: string) => void }) {
     const menuItems = [
         {'name': 'Home', 'icon': '/images/home.png', 'ln': '#'},
         {'name': 'Sports', 'icon': '/images/gaming.png', 'ln': '#'},
@@ -36,12 +36,9 @@ export default function SideMenu(setSearchside:any) {
     ];
     
 
-    const [selectedText, setSelectedText] = useState("");
 
     const handleClick = (name: string) => {
-        setSelectedText(name);
-        console.log(selectedText)
-        setSearchside(selectedText);
+        setSearchside(name);
     };
 
     return (

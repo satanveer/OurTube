@@ -10,8 +10,8 @@ export default function Parent(){
         <div>
             <SideMenu setSearchside={setSearchside}></SideMenu>
             <div>
-            <Navbar setsearch={setsearch}></Navbar>
-            <Feed search={search} side={searchSide}></Feed>
+                <Navbar setsearch={setsearch}></Navbar>
+                <Feed search={search} side={searchSide}></Feed>
             </div>
             
         </div>

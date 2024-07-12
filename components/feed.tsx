@@ -3,7 +3,6 @@ import Link from 'next/link';
 import moment from 'moment';
 import valueConverters from '@/components/valueConverter';
 import shortenTitle from '@/components/titleConverter';
-import Recommendation from './Recommendation';
 import { useState, useEffect } from 'react';
 import { fetchVideos } from './youtubeApi';
 
@@ -16,16 +15,23 @@ interface Video {
   publishedAt: string;
 }
 
-export default function Feed({ search, side }: { search: string; side: string }) {
-  console.log(search)
+
+export default function Feed({ search, side }: { search: string; side: any }) {
+  
   const [vid, setVid] = useState<Video[]>([]);
   const [sideVid, setSideVid] = useState<Video[]>([]);
+
+  
+  const [videoList, setVideoList] = useState<Video[]>([]);
+
+
 
   useEffect(() => {
     const loadVideos = async () => {
       
       const videoDataFromSearch = await fetchVideos(search);
       setVid(videoDataFromSearch);
+      setVideoList(videoDataFromSearch)
     };
     loadVideos();
   }, [search]);
@@ -33,14 +39,12 @@ export default function Feed({ search, side }: { search: string; side: string })
     const loadSideVideos = async () => {
       const videoDataFromSearchSide = await fetchVideos(side);
       setSideVid(videoDataFromSearchSide);
+      setVideoList(videoDataFromSearchSide)
     };
     loadSideVideos();
   }, [side]);
-  useEffect(()=>{
+ 
 
-  },[vid])
-
-  const videoList = [...vid, ...sideVid];
 
   return (
     <div className='flex flex-wrap justify-around md:pl-52'>
