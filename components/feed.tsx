@@ -16,14 +16,14 @@ interface Video {
 }
 
 
-export default function Feed({ search, side }: { search: string; side: any }) {
+export default function Feed({ search, side ,recommendationmenu}: { search: string; side: any ; recommendationmenu:any}) {
   
   const [vid, setVid] = useState<Video[]>([]);
   const [sideVid, setSideVid] = useState<Video[]>([]);
-
+  const [recomVid, setrecomVid] = useState<Video[]>([])
   
   const [videoList, setVideoList] = useState<Video[]>([]);
-
+  console.log(recommendationmenu)
 
 
   useEffect(() => {
@@ -43,6 +43,15 @@ export default function Feed({ search, side }: { search: string; side: any }) {
     };
     loadSideVideos();
   }, [side]);
+
+ useEffect(() => {
+  const loadRecommendationVideos = async () =>{
+    const videoDataFromRecommendation = await fetchVideos(recommendationmenu)
+    setrecomVid(videoDataFromRecommendation);
+    setVideoList(videoDataFromRecommendation);
+  }
+  loadRecommendationVideos();
+ }, [recommendationmenu])
  
 
 

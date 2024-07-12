@@ -1,8 +1,11 @@
 import React from 'react'
 import Link from 'next/link';
+import { useState } from 'react';
 
-
-export default function Recommendation() {
+export default function Recommendation({ setRecommend }: { setRecommend: (value: string) => void }) {
+    const handle = (suggestion: string) => {
+        setRecommend(suggestion);
+    };
         const recommendation = [
             { suggestion: 'sports', ln: '#' },
             { suggestion: 'music', ln: '#' },
@@ -21,14 +24,14 @@ export default function Recommendation() {
         ];
         
     return (
-        <div className='hidden md:block xl:block'>
-        <div className='flex gap-5 md:w-[288px] md:pl-64 pb-3'>
+        <div className='hidden md:block xl:block overflow-x-clip'>
+        <div className='flex gap-5 md:w-[288px] md:pl-56 pt-20'>
             {recommendation &&
                 recommendation.map((item: any, index: any) => (
                     <ul className='flex' key={1}>
                         <Link href={item.ln} className=''>
                         <li className=''>
-                            <span className='text-white bg-gray-500 p-[6px] bg-opacity-50 rounded-xl hover:bg-opacity-80 hover:transition-all delay-50'>{item.suggestion}</span>
+                            <button className='text-white bg-gray-500 p-[6px] bg-opacity-50 rounded-xl hover:bg-opacity-80 hover:transition-all delay-50' onClick={() => handle(item.suggestion)}>{item.suggestion}</button>
                         </li>
                         </Link>
                     </ul>
