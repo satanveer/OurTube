@@ -21,7 +21,7 @@ interface NavbarProps {
       <nav className="flex fixed w-full h-16">
         <ul className="flex p-3 md:px-4 w-full justify-between items-cente">
           <li className="">
-            <Link href={"#"} className="text-white flex gap-1 items-center justify-start">
+            <Link href={"/"} className="text-white flex gap-1 items-center justify-start">
               <div>
                 <Image
                   src={"/images/video.png"}
