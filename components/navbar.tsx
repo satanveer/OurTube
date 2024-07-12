@@ -19,9 +19,9 @@ interface NavbarProps {
   return (
     <div>
       <nav className="flex fixed w-full h-16">
-        <ul className="flex p-3 px-4 w-full justify-between items-center">
+        <ul className="flex p-3 md:px-4 w-full justify-between items-cente">
           <li className="">
-            <Link href={"#"} className="text-white flex gap-1 items-center">
+            <Link href={"#"} className="text-white flex gap-1 items-center justify-start">
               <div>
                 <Image
                   src={"/images/video.png"}
@@ -34,21 +34,21 @@ interface NavbarProps {
               <span className="text-2xl pt-3 hidden md:block">OurTube</span>
             </Link>
           </li>
-          <li className="">
-            <form className="flex gap-4 md:mr-32" onSubmit={handleSubmit}>
+          <li className="flex justify-between">
+            <form className="flex md:gap-4 md:mr-32 justify-between" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Search..."
-                className="md:block hidden border-[1.5px] border-gray-500 p-1 px-3 rounded-2xl w-[460px] text-white focus:outline-none"
+                className="md:block  border-[1.5px] border-gray-500 p-1 px-3 rounded-2xl md:w-[460px] text-white focus:outline-none w-[230px] mr-3"
                 onChange={(e) => setInput(e.target.value)}
                 value={inputText}
               />
-              <button type="submit">
+              <button type="submit" className="">
                 <Image
                   src={"/images/search.png"}
                   alt="Search"
-                  height={32}
-                  width={32}
+                  height={40}
+                  width={40}
                   className="flex justify-end"
                 />
               </button>
