@@ -56,7 +56,7 @@ export default function Feed({ search, side ,recommendationmenu}: { search: stri
 
 
   return (
-    <div className='flex flex-wrap justify-around md:pl-52'>
+    <div className='flex flex-wrap justify-around md:pl-52 md:pt-0 pt-2'>
       {videoList.map((video) => (
         <div className='w-full md:w-[288px] md:h-[300px] mt-10' key={video.id}>
           <div className='flex flex-col items-center h-full'>
