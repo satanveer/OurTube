@@ -31,6 +31,7 @@ export default function Feed({ search, side ,recommendationmenu}: { search: stri
       
       const videoDataFromSearch = await fetchVideos(search);
       setVid(videoDataFromSearch);
+      setVid([]);
       setVideoList(videoDataFromSearch)
     };
     loadVideos();
@@ -56,9 +57,9 @@ export default function Feed({ search, side ,recommendationmenu}: { search: stri
 
 
   return (
-    <div className='flex flex-wrap justify-around md:pl-52 md:pt-0 pt-2'>
+    <div className='flex flex-wrap justify-around md:pl-5 md:pt-0 pt-2'>
       {videoList.map((video) => (
-        <div className='w-full md:w-[288px] md:h-[300px] mt-10' key={video.id}>
+        <div className='w-[280px] ml-10 md:mr-0 md:w-[288px] md:h-[300px] mt-10' key={video.id}>
           <div className='flex flex-col items-center h-full'>
             <Link href={`https://youtube.com/watch?v=${video.id}`} className='w-full'>
               <div className='w-full'>

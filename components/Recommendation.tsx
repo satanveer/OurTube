@@ -20,12 +20,15 @@ export default function Recommendation({ setRecommend }: { setRecommend: (value:
             { suggestion: 'movies', ln: '#' },
             { suggestion: 'technology', ln: '#' },
             { suggestion: 'science', ln: '#' },
+            { suggestion: 'movies', ln: '#' },
+            { suggestion: 'technology', ln: '#' },
+            { suggestion: 'science', ln: '#' },
             { suggestion: 'more', ln: '#' },
         ];
         
     return (
         <div className='hidden md:block xl:block overflow-x-clip'>
-        <div className='flex gap-5 md:w-[288px] md:pl-56 pt-20'>
+        <div className='flex gap-5 md:w-[288px] md:pl-16 pt-26'>
             {recommendation &&
                 recommendation.map((item: any, index: any) => (
                     <ul className='flex' key={1}>
