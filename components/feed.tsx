@@ -59,7 +59,7 @@ export default function Feed({ search, side ,recommendationmenu,isMenuOpen}: { s
   return (
     <div className='flex flex-wrap justify-around md:pt-5 pt-2 gap-y-10'>
       {videoList.map((video) => (
-        <div className={`'w-full md:w-[288px] md:h-[300px] mt-10' key={video.id} ${isMenuOpen?"ml-5":"md:ml-[70px]"}`}>
+        <div className={`'w-full md:w-[288px] md:h-[300px] mt-10'  ${isMenuOpen?"ml-5":"md:ml-[70px]"}`}key={video.id}>
           <div className='flex flex-col items-center h-full'>
             <Link href={`https://youtube.com/watch?v=${video.id}`} className='w-full'>
               <div className='w-full'>
