@@ -19,18 +19,19 @@ export default function Navbar({ setsearch, toggleMenu }: NavbarProps) {
   return (
     <div className="fixed w-full bg-gray-800 z-50">
       <nav className="flex w-full h-16">
-        <button
-          onClick={toggleMenu}
-          className="text-white rounded flex items-center justify-center w-10 h-10 hover:bg-gray-500 hover:rounded-full hover:transition-all hover:delay-50 mt-4 ml-4"
-        >
-          <img src="/images/hamburgerMenu.png" alt="Menu" className="w-6 h-6" />
-        </button>
+        
         <ul className="flex p-3 md:px-4 w-full justify-between items-center">
           <li className="">
             <Link
               href={"/"}
               className="text-white flex gap-1 items-center justify-start"
             >
+              <button
+          onClick={toggleMenu}
+          className="text-white rounded flex items-center justify-center w-10 h-10 hover:transition-all hover:delay-50"
+        >
+          <img src="/images/hamburgerMenu.png" alt="Menu" className="w-[30px] h-[30px] mt-[10px]" />
+        </button>
               <div>
                 <Image
                   src={"/images/video.png"}
@@ -43,7 +44,7 @@ export default function Navbar({ setsearch, toggleMenu }: NavbarProps) {
               <span className="text-2xl pt-3 hidden md:block">OurTube</span>
             </Link>
           </li>
-          <li className="flex justify-between items-center">
+          <li className="flex justify-between items-center ">
             <form
               className="flex md:gap-4 md:mr-32 justify-between"
               onSubmit={handleSubmit}
@@ -51,7 +52,7 @@ export default function Navbar({ setsearch, toggleMenu }: NavbarProps) {
               <input
                 type="text"
                 placeholder="Search..."
-                className="md:block border-[1.5px] border-gray-500 p-1 px-3 rounded-2xl md:w-[460px] text-white focus:outline-none w-[230px] mr-3"
+                className="md:block border-[1px] border-primary p-1 px-3 rounded-2xl md:w-[460px] text-white focus:outline-none w-[180px] mr-3"
                 onChange={(e) => setInput(e.target.value)}
                 value={inputText}
               />
@@ -73,6 +74,7 @@ export default function Navbar({ setsearch, toggleMenu }: NavbarProps) {
                 width={32}
                 height={32}
                 alt="Profile"
+                className="border-[2.5px] border-primary rounded-full"
               />
             </Link>
           </li>

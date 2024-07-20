@@ -45,7 +45,7 @@ export default function SideMenu({
     setSearchside(name);
   };
 
-  const displayedItems = isMenuOpen ? menuItems : menuItems.slice(0, 8);
+  const displayedItems = isMenuOpen ? menuItems : menuItems.slice(0, 11);
 
   return (
     <div
