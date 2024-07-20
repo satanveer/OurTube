@@ -28,7 +28,7 @@ export default function Recommendation({ setRecommend }: { setRecommend: (value:
         
     return (
         <div className='hidden md:block xl:block overflow-x-clip'>
-        <div className='flex gap-5 md:w-[288px] md:pl-16 pt-26'>
+        <div className='flex gap-5 md:w-[288px] md:pl-20 pt-26'>
             {recommendation &&
                 recommendation.map((item: any, index: any) => (
                     <ul className='flex' key={1}>

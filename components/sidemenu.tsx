@@ -49,25 +49,11 @@ export default function SideMenu({
 
   return (
     <div
-      className={`fixed top-16 left-0 h-full transition-all duration-300 ${
-        isMenuOpen ? "w-[190px]" : "w-[70px]"
-      } bg-gray-900 text-white overflow-hidden z-40`}
+      className={`fixed top-0 left-0 h-full transition-transform duration-300 transform ${
+        isMenuOpen ? "translate-x-0 w-[190px]" : "-translate-x-full w-0"
+      } ${isMenuOpen?"md:w-[190px]":"md:w-[70px]"} bg-gray-900 text-white overflow-hidden z-40 md:translate-x-0 md:fixed md:top-0 md:left-0`}
     >
-      <button
-        onClick={toggleMenu}
-        className="fixed z-50 bg-pink-600 text-white rounded mt-4 flex items-center justify-center w-10 h-10 md:ml-1"
-      >
-        <img
-          src="/images/hamburgerMenu.png"
-          alt="Menu"
-          className="w-6 h-6"
-        />
-      </button>
-      <div
-        className={`h-full ${
-          isMenuOpen ? "block" : "flex flex-col items-center mt-12"
-        }`}
-      >
+      <div className={`h-full ${isMenuOpen ? "block" : "hidden"} md:block`}>
         <div className="scrollableSidebar w-full">
           {displayedItems.map((item, index) => (
             <div className="pl-3 w-full" key={index}>

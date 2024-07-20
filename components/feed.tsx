@@ -16,7 +16,7 @@ interface Video {
 }
 
 
-export default function Feed({ search, side ,recommendationmenu}: { search: string; side: any ; recommendationmenu:any}) {
+export default function Feed({ search, side ,recommendationmenu,isMenuOpen}: { search: string; side: any ; recommendationmenu:any; isMenuOpen:boolean}) {
   
   const [vid, setVid] = useState<Video[]>([]);
   const [sideVid, setSideVid] = useState<Video[]>([]);
@@ -57,9 +57,9 @@ export default function Feed({ search, side ,recommendationmenu}: { search: stri
 
 
   return (
-    <div className='flex flex-wrap justify-around md:pl-5 md:pt-0 pt-2'>
+    <div className='flex flex-wrap justify-around md:pt-5 pt-2 gap-y-10'>
       {videoList.map((video) => (
-        <div className='w-[280px] ml-10 md:mr-0 md:w-[288px] md:h-[300px] mt-10' key={video.id}>
+        <div className={`'w-full md:w-[288px] md:h-[300px] mt-10' key={video.id} ${isMenuOpen?"ml-5":"md:ml-[70px]"}`}>
           <div className='flex flex-col items-center h-full'>
             <Link href={`https://youtube.com/watch?v=${video.id}`} className='w-full'>
               <div className='w-full'>

@@ -6,27 +6,40 @@ import SideMenu from "./sidemenu";
 import Recommendation from "./Recommendation";
 
 export default function Parent() {
-    const [search, setSearch] = useState("");
-    const [searchSide, setSearchside] = useState("");
-    const [recommend, setRecommend] = useState("");
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const [searchSide, setSearchside] = useState("");
+  const [recommend, setRecommend] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <div className="h-full">
-            <Navbar setsearch={setSearch} />
-            <div className="flex "> 
-                <SideMenu setSearchside={setSearchside} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                <div className={`flex-1 transition-all duration-300 ${isMenuOpen ? 'md:ml-[190px]' : 'md:ml-[10px]'}`}>
-                    <div className="mt-20">
-                        <Recommendation setRecommend={setRecommend} />
-                    </div>
-                    <Feed search={search} side={searchSide} recommendationmenu={recommend} />
-                </div>
-            </div>
+  return (
+    <div className="h-full">
+      <Navbar setsearch={setSearch} toggleMenu={toggleMenu} />
+      <div className="flex">
+        <SideMenu
+          setSearchside={setSearchside}
+          isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
+        />
+        <div
+          className={`flex-1 transition-all duration-300 ${
+            isMenuOpen ? "md:ml-[190px]" : "md:ml-0"
+          }`}
+        >
+          <div className="mt-20">
+            <Recommendation setRecommend={setRecommend} />
+          </div>
+          <Feed
+            search={search}
+            side={searchSide}
+            recommendationmenu={recommend}
+            isMenuOpen={isMenuOpen}
+          />
         </div>
-    );
+      </div>
+    </div>
+  );
 }
