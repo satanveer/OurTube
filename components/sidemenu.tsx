@@ -49,39 +49,41 @@ export default function SideMenu({
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full transition-transform duration-300 transform ${
-        isMenuOpen ? "translate-x-0 w-[190px]" : "-translate-x-full w-0"
-      } ${isMenuOpen?"md:w-[190px]":"md:w-[70px]"} bg-gray-900 text-white overflow-hidden z-40 md:translate-x-0 md:fixed md:top-0 md:left-0`}
+      className={`fixed top-0 left-0 h-full transition-all duration-300 transform ${
+        isMenuOpen ? "translate-x-0 w-[220px]" : "-translate-x-full w-0"
+      } ${isMenuOpen?"md:w-[220px]":"md:w-[80px]"} navbar-blur text-white overflow-hidden z-40 md:translate-x-0 md:fixed md:top-0 md:left-0 border-r border-white/10`}
     >
-      <div className={`h-full ${isMenuOpen ? "block" : "hidden"} md:block`}>
-        <div className="scrollableSidebar w-full">
+      <div className={`h-full ${isMenuOpen ? "block" : "hidden"} md:block pt-16`}>
+        <div className="scrollableSidebar w-full px-2">
           {displayedItems.map((item, index) => (
-            <div className="pl-3 w-full" key={index}>
+            <div className="w-full" key={index}>
               <nav className="text-gray-400">
-                <ul className="flex flex-col pt-7 mr-4">
+                <ul className="flex flex-col pt-2">
                   <button
-                    className="flex items-center"
+                    className="flex items-center group"
                     onClick={() => handleClick(item.name)}
                   >
-                    <Link
-                      href={item.ln}
-                      className={`flex items-center hover:bg-gray-600 hover:rounded-2xl px-2 py-2 gap-2 hover:transition ease-in-out delay-10 ${
+                    <div
+                      className={`flex items-center w-full glass-effect hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-pink-500/10 rounded-xl px-3 py-3 gap-3 transition-all duration-300 ${
                         isMenuOpen ? "" : "justify-center"
-                      }`}
+                      } border border-transparent hover:border-cyan-400/20`}
                     >
-                      <Image
-                        src={item.icon}
-                        alt=""
-                        width={isMenuOpen ? 25 : 40}
-                        height={isMenuOpen ? 25 : 40}
-                        className="bg-transparent"
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                        <Image
+                          src={item.icon}
+                          alt=""
+                          width={isMenuOpen ? 22 : 28}
+                          height={isMenuOpen ? 22 : 28}
+                          className="relative z-10 group-hover:scale-110 transition-transform"
+                        />
+                      </div>
                       {isMenuOpen && (
-                        <span className="bg-transparent text-base">
+                        <span className="text-sm font-medium group-hover:text-cyan-400 transition-colors">
                           {item.name}
                         </span>
                       )}
-                    </Link>
+                    </div>
                   </button>
                 </ul>
               </nav>

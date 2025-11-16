@@ -16,28 +16,30 @@ export default function Parent() {
   };
 
   return (
-    <div className="h-full">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Navbar setsearch={setSearch} toggleMenu={toggleMenu} />
-      <div className="flex">
+      <div className="flex w-full">
         <SideMenu
           setSearchside={setSearchside}
           isMenuOpen={isMenuOpen}
           toggleMenu={toggleMenu}
         />
         <div
-          className={`flex-1 transition-all duration-300 ${
-            isMenuOpen ? "md:ml-[190px]" : "md:ml-0"
+          className={`flex-1 transition-all duration-300 w-full ${
+            isMenuOpen ? "md:ml-[220px]" : "md:ml-[80px]"
           }`}
         >
-          <div className="mt-20">
+          <div className="mt-16 w-full">
             <Recommendation setRecommend={setRecommend} />
           </div>
-          <Feed
-            search={search}
-            side={searchSide}
-            recommendationmenu={recommend}
-            isMenuOpen={isMenuOpen}
-          />
+          <div className="mt-4 w-full">
+            <Feed
+              search={search}
+              side={searchSide}
+              recommendationmenu={recommend}
+              isMenuOpen={isMenuOpen}
+            />
+          </div>
         </div>
       </div>
     </div>
