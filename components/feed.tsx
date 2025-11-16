@@ -86,7 +86,8 @@ export default function Feed({
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-5 pt-5 px-3 md:px-4 max-w-full">
+    <div className="w-full max-w-full overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-5 pt-5 px-3 md:px-5 pb-8">
       {videoList.map((video, index) => (
         <div
           className="video-card w-full"
@@ -146,6 +147,7 @@ export default function Feed({
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }

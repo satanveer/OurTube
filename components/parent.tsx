@@ -25,14 +25,14 @@ export default function Parent() {
           toggleMenu={toggleMenu}
         />
         <div
-          className={`flex-1 transition-all duration-300 w-full ${
+          className={`flex-1 transition-all duration-300 w-full max-w-full overflow-hidden ${
             isMenuOpen ? "md:ml-[220px]" : "md:ml-[80px]"
           }`}
         >
-          <div className="mt-16 w-full">
+          <div className="mt-16 w-full max-w-full overflow-hidden">
             <Recommendation setRecommend={setRecommend} />
           </div>
-          <div className="mt-4 w-full">
+          <div className="mt-4 w-full max-w-full overflow-hidden">
             <Feed
               search={search}
               side={searchSide}

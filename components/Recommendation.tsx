@@ -39,7 +39,7 @@ export default function Recommendation({ setRecommend }: { setRecommend: (value:
         
     return (
         <div className='w-full overflow-hidden pb-3 relative'>
-        <div className='flex gap-3 px-4 pt-4 overflow-x-auto scrollbar-hide scroll-smooth'>
+        <div className='flex gap-3 px-3 md:px-5 pt-4 overflow-x-auto scrollbar-hide scroll-smooth'>
             {recommendation &&
                 recommendation.map((item: any, index: any) => (
                     <div key={index} className="flex-shrink-0" style={{ animationDelay: `${index * 0.05}s` }}>
